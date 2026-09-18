@@ -58,10 +58,10 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Terraform Init
-        run: terraform init
+        run: terraform -chdir=./Environement/UAT init
 
       - name: Terraform Validate
-        run: terraform validate
+        run: terraform -chdir=./Environement/UAT validate
 
 
   # =========================
@@ -82,10 +82,10 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Terraform Init
-        run: terraform init  ./Environement/UAT
+        run: terraform -chdir=./Environement/UAT init
 
       - name: Terraform Plan
-        run: terraform plan  ./Environement/UAT
+        run: terraform -chdir=./Environement/UAT plan
 
 
   # =========================
@@ -106,6 +106,6 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Terraform Init
-        run: terraform init ./Environement/UAT
+        run: terraform -chdir=./Environement/UAT init
       - name: Terraform Apply
-        run: terraform apply -auto-approve ./Environement/UAT
+        run: terraform -chdir=./Environement/UAT apply -auto-approve
