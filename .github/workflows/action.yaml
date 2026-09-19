@@ -37,7 +37,7 @@ jobs:
         run: terraform version
 
       - name: Terraform Init
-        run: terraform init
+        run: terraform -chdir=./Environement/UAT init
 
 
   # =========================

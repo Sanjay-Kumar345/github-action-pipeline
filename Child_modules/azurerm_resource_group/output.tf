@@ -1,4 +1,4 @@
-output "resource-rg" {
-    value = azurerm_resource_group.rgs["rg1"].name
-  
+output "rgs" {
+  value       = azurerm_resource_group.rgs
+  description = "Map of created resource groups"
 }
