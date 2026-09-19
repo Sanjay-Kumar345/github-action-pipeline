@@ -109,3 +109,17 @@ jobs:
         run: terraform -chdir=./Environement/UAT init
       - name: Terraform Apply
         run: terraform -chdir=./Environement/UAT apply -auto-approve
+
+
+#   Stage 5 - Destroy
+  Jobs:
+    terraform-Destroy:
+      runs-on: self-hosted
+      setps:
+       - name: Checkout Code
+         uses: actions/checkout@v4
+         
+       - name: Terraform Init
+         run: terraform -chdir=./Environement/UAT init
+       - name: Terraform Destroy
+         run: terraform -chdir=./Environement/UAT destroy -auto-approve

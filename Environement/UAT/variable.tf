@@ -70,6 +70,12 @@ variable "vm2_name" {
   description = "Name of VM 2 in Australia East"
 }
 
+variable "vm_size" {
+  type        = string
+  default     = "Standard_B2s"
+  description = "Size of the VMs"
+}
+
 variable "admin_username" {
   type        = string
   default     = "azureuser"
