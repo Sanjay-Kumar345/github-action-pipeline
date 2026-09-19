@@ -81,7 +81,7 @@ module "vm-eastus" {
   location            = var.rg-name["eastus"].location
   resource_group_name = var.rg-name["eastus"].name
   subnet_id           = module.vnet-eastus.vm_subnet_id
-  vm_size             = var.vm_size
+  vm_size             = coalesce(var.vm1_size, var.vm_size)
   admin_username      = var.admin_username
   admin_password      = var.admin_password
   depends_on          = [module.vnet-eastus]
@@ -94,7 +94,7 @@ module "vm-australiaeast" {
   location            = var.rg-name["australiaeast"].location
   resource_group_name = var.rg-name["australiaeast"].name
   subnet_id           = module.vnet-australiaeast.vm_subnet_id
-  vm_size             = var.vm_size
+  vm_size             = coalesce(var.vm2_size, var.vm_size)
   admin_username      = var.admin_username
   admin_password      = var.admin_password
   depends_on          = [module.vnet-australiaeast]

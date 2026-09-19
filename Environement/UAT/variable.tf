@@ -72,8 +72,20 @@ variable "vm2_name" {
 
 variable "vm_size" {
   type        = string
-  default     = "Standard_B1s"
-  description = "Size of the VMs"
+  default     = "Standard_D2s_v3"
+  description = "Default size of the VMs"
+}
+
+variable "vm1_size" {
+  type        = string
+  default     = null
+  description = "Size of VM 1 in East US (defaults to vm_size if null)"
+}
+
+variable "vm2_size" {
+  type        = string
+  default     = null
+  description = "Size of VM 2 in Australia East (defaults to vm_size if null)"
 }
 
 variable "enable_policy_assignment" {

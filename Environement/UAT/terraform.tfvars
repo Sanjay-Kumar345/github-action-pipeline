@@ -27,7 +27,7 @@ vnet2_bastion_subnet_prefix = ["10.2.2.0/26"]
 # VM Configuration
 vm1_name       = "vm-eastus"
 vm2_name       = "vm-australiaeast"
-vm_size        = "Standard_B1s"
+vm_size        = "Standard_D2s_v3"
 admin_username = "azureuser"
 admin_password = "P@ssw0rd123456!"
 
