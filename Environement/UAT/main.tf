@@ -6,11 +6,12 @@ module "resource-group" {
 
 # 2. Azure Policy Allocation Module (Uses Azure Built-in "Allowed locations" policy)
 module "policy-resource" {
-  source            = "../../Child_modules/Policy_allocation"
-  policy-name       = var.policy-name
-  allowed_locations = var.allowed_locations
-  scope             = module.resource-group.rgs["eastus"].id
-  depends_on        = [module.resource-group]
+  source                   = "../../Child_modules/Policy_allocation"
+  policy-name              = var.policy-name
+  allowed_locations        = var.allowed_locations
+  scope                    = module.resource-group.rgs["eastus"].id
+  enable_policy_assignment = var.enable_policy_assignment
+  depends_on               = [module.resource-group]
 }
 
 # 3. Virtual Network 1 (East US)

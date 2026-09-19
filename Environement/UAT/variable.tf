@@ -72,8 +72,14 @@ variable "vm2_name" {
 
 variable "vm_size" {
   type        = string
-  default     = "Standard_B2s"
+  default     = "Standard_B1s"
   description = "Size of the VMs"
+}
+
+variable "enable_policy_assignment" {
+  type        = bool
+  default     = false
+  description = "Controls whether to create policy assignments (requires Resource Policy Contributor or Owner role)"
 }
 
 variable "admin_username" {
